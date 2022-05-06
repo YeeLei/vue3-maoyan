@@ -3,8 +3,8 @@ import http from './http'
 
 const debug = process.env.NODE_ENV !== 'production'
 const BASE_URL = debug
-  ? 'http://192.168.1.3:8080'
-  : '线上地址'
+  ? 'http://localhost:8080'
+  : 'http://121.5.20.199'
 
 // 最受热映列表接口
 export const getHotRatedApi = () => http.get('/rated/list')

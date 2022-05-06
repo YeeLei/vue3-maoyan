@@ -248,7 +248,6 @@ export default {
     const setPrecent = (index) => {
       if (precentRef.value) {
         if (detailInfo.value.distributions[index]) {
-          console.log(precentRef.value[index])
           precentRef.value[index].style.width = detailInfo.value.distributions[index].proportion + '%'
         } else {
           return ''

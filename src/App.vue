@@ -1,11 +1,9 @@
 <template>
   <router-view v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component"
-                 v-if="$route.meta.requireAlive" />
+      <component :is="Component" v-if="$route.meta.requireAlive" />
     </keep-alive>
-    <component :is="Component"
-               v-if="!$route.meta.requireAlive" />
+    <component :is="Component" v-if="!$route.meta.requireAlive" />
   </router-view>
 </template>
 

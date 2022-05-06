@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { computed, ref, onMounted } from '@vue/runtime-core'
+import { computed, ref, onMounted, watch } from '@vue/runtime-core'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
@@ -62,18 +62,29 @@ export default {
     const route = useRoute()
     const router = useRouter()
 
+    // watch
+    watch(route, () => {
+      toPath()
+    })
     // mounted
     onMounted(() => {
+      toPath()
+    })
+
+    // methods
+    const toPath = () => {
       list.value.forEach((item, index) => {
         if (route.name === item.path) {
           currentIndex.value = index
         }
       })
       const el = ulRef.value.children[currentIndex.value]
-      lineRef.value.style.left = OFFSETWIDTH + el.offsetLeft + (el.offsetWidth / 2) + 'px'
-    })
-
-    // methods
+      if (el.offsetLeft === 0) {
+        lineRef.value.style.left = OFFSETWIDTH + 44 + 'px'
+      } else {
+        lineRef.value.style.left = OFFSETWIDTH + el.offsetLeft + (el.offsetWidth / 2) + 'px'
+      }
+    }
     const handleNavClick = (el) => {
       lineRef.value.style.left = OFFSETWIDTH + el.srcElement.offsetLeft + (el.srcElement.offsetWidth / 2) + 'px'
     }

@@ -42,9 +42,6 @@ const routes = [
       {
         path: 'movies',
         component: Movies,
-        meta: {
-          index: 11
-        },
         children: [
           {
             path: '/home/movies',
@@ -53,64 +50,40 @@ const routes = [
           {
             path: 'hot',
             component: Hot,
-            name: 'hot',
-            meta: {
-              index: 0
-            }
+            name: 'hot'
           },
           {
             path: 'cinema',
             component: Cinema,
-            name: 'cinema',
-            meta: {
-              index: 1
-            }
+            name: 'cinema'
           },
           {
             path: 'wait',
             component: Wait,
-            name: 'wait',
-            meta: {
-              index: 2
-            }
+            name: 'wait'
           },
           {
             path: 'classic',
             component: Classic,
-            name: 'classic',
-            meta: {
-              index: 3
-            }
+            name: 'classic'
           }
         ]
       },
       {
         path: 'video',
-        component: Video,
-        meta: {
-          index: 12
-        }
+        component: Video
       },
       {
         path: 'mini-video',
-        component: MiniVideo,
-        meta: {
-          index: 13
-        }
+        component: MiniVideo
       },
       {
         path: 'show',
-        component: Show,
-        meta: {
-          index: 14
-        }
+        component: Show
       },
       {
         path: 'mine',
-        component: Mine,
-        meta: {
-          index: 15
-        }
+        component: Mine
       }
     ]
   },

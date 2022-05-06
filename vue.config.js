@@ -7,6 +7,7 @@ const classicMoviesListData = require('./src/mock/classic-movies.json')
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
+    proxy: 'http://121.5.20.199:8080',
     onBeforeSetupMiddleware (devServer) {
       devServer.app.get('/api/wait/ratedlist', (req, res) => {
         res.json(waitRatedData)
